@@ -1,6 +1,7 @@
 package com.rshinna.mybot_api.controller;
 
 import com.rshinna.mybot_api.dto.MensagemRequest;
+import com.rshinna.mybot_api.dto.MensagemResponse;
 import com.rshinna.mybot_api.service.ChatService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -24,7 +25,9 @@ public class ChatController {
   @Operation(
       summary = "Enviar mensagem",
       description = "Recebe uma mensagem do usuário e retorna uma resposta do chatbot")
-  public String conversar(@RequestBody MensagemRequest request) {
-    return chatService.processarMensagem(request.getMensagem());
+  public MensagemResponse conversar(@RequestBody MensagemRequest request) {
+    String resposta = chatService.processarMensagem(request.getMensagem());
+
+    return new MensagemResponse(resposta);
   }
 }

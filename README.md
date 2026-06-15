@@ -45,7 +45,7 @@ flowchart TD
 
 ## ✅ Pré-requisitos
 
-- Java 17+
+- Java 21+
 - Maven 3.8+
 
 ## ⚙️ Como executar
@@ -61,6 +61,17 @@ flowchart TD
 ```bash
    http POST :8080/chat mensagem="Oi"
 ```
+
+## 📚 Documentação da API
+
+Após iniciar a aplicação, acesse:
+
+http://localhost:8080/swagger-ui/index.html
+
+Especificação OpenAPI:
+
+http://localhost:8080/v3/api-docs
+
 
 ## 🧪 Exemplos
 
